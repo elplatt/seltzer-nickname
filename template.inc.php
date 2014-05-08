@@ -64,12 +64,10 @@ function template_nickname ($contact) {
     global $template_first;
     global $template_last;
     global $template_middle;
-    $a = sha1($contact['firstName']);
-    $b = sha1($contact['middleName']);
-    $c = sha1($contact['lastName']);
+    $a = sha1($contact['firstName'] . $contact['middleName'] . $contact['lastName']);
     $first = $template_first[intval($a{0}, 16) % 6];
-    $middle = $template_middle[intval($b{0}, 16) % 6];
-    $last = $template_last[intval($c{0}, 16) % 6];
+    $middle = $template_middle[intval($b{1}, 16) % 6];
+    $last = $template_last[intval($c{2}, 16) % 6];
     return "$first $middle $last";
 }
 
