@@ -1,4 +1,4 @@
-seltzer-module
+seltzer-nickname
 ===========================
 
 Template module for Seltzer CRM.
